@@ -34,20 +34,23 @@ document.getElementById('btn-renato').addEventListener('click', function () {
     // playerNameAdd('Renato Sanches')
     something('Renato Sanches');
 })
-function something(name){
+function something(name) {
     const list = document.querySelectorAll('.list-content li')
-    const listLenght = list.length ;
-    if(listLenght < 5 ){
+    const listLenght = list.length;
+    if (listLenght < 5) {
         playerNameAdd(name);
-    }else{
+    } else {
         alert('you can not buy more than 5 players')
     }
     console.log(listLenght);
-    const playerPriceElement = document.getElementById('player-total-price');
-    const playerPriceString = playerPriceElement.innerText;
-    const playerPrice = parseInt(playerPriceString);
+}
+const playerPriceElement = document.getElementById('player-total-price');
+const playerPriceString = playerPriceElement.innerText;
+const playerPrice = parseInt(playerPriceString);
 
-    document.getElementById('calculate').addEventListener('click', function(){
+document.getElementById('calculate').addEventListener('click', function () {
+    const list = document.querySelectorAll('.list-content li')
+    const listLenght = list.length;
     const listLengthValue = listLenght;
     const listLengthString = parseInt(listLengthValue);
     // console.log(listLengthString);
@@ -57,16 +60,24 @@ function something(name){
     const playerPurchasePrice = parseInt(playerPurchasePriceString);
 
 
-    const playerTotalPrice = playerPurchasePrice * listLengthString;
+    const playerTotalPrice = playerPurchasePrice * listLengthString + playerPrice;
     playerPriceElement.innerText = playerTotalPrice;
-    })
-
-    document.getElementById('calculate-total').addEventListener('click', function(){
-    const managerPriceField = document.getElementById('manager-price');
-    const managerPriceFieldString = managerPriceField.value;
-    const managerPrice = parseInt(managerPriceFieldString);
-
+    document.getElementById('calculate-total').addEventListener('click', function () {
+        const managerPriceField = document.getElementById('manager-price');
+        const managerPriceFieldString = managerPriceField.value;
+        const managerPrice = parseInt(managerPriceFieldString);
     
+        const coachPriceField = document.getElementById('coach-price');
+        const coachPriceFieldString = coachPriceField.value;
+        const coachPrice = parseInt(coachPriceFieldString);
+    
+        const calculateTotalValue = document.getElementById('all-total-price');
+        const calculateTotalValueString = calculateTotalValue.innerText;
+        const calculateTotal = parseInt(calculateTotalValueString);
+    
+        const calculateTotalAll = playerTotalPrice + managerPrice + coachPrice + calculateTotal;
+        calculateTotalValue.innerText = calculateTotalAll;
     })
-}
+})
+
 
