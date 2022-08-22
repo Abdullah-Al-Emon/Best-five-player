@@ -14,3 +14,12 @@ function playerNameAdd(name){
     li.innerText = name;
     listContainer.appendChild(li);
 }
+function something(name) {
+    const list = document.querySelectorAll('.list-content li')
+    const listLenght = list.length;
+    if (listLenght < 5) {
+        playerNameAdd(name);
+    } else {
+        alert('you can not buy more than 5 players')
+    }
+}
