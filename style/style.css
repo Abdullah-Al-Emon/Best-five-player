@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap);
+
+header,
+section {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    overflow: hidden
+}
+
+.margin-content {
+    padding-top: 130px
+}
+
+.heading-title {
+    font-size: 4rem;
+    color: #ff5e19;
+    font-family: 'Berkshire Swash', cursive
+}
+
+.player {
+    margin-top: 100px
+}
+
+.football {
+    margin-top: 50px;
+    margin-right: 0;
+    margin-left: 50px
+}
+
+.order-list li {
+    margin: 20px 20px
+}
