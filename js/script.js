@@ -36,13 +36,17 @@ document.getElementById('btn-renato').addEventListener('click', function () {
 })
 function something(name){
     const list = document.querySelectorAll('.list-content li')
-    const listLenght = list.length + 1;
-    if(listLenght >= 5 ){
-        alert('you can not buy more than 5 players')
-    }else{
+    const listLenght = list.length ;
+    if(listLenght < 5 ){
         playerNameAdd(name);
+    }else{
+        alert('you can not buy more than 5 players')
     }
     console.log(listLenght);
+    const playerPriceElement = document.getElementById('player-total-price');
+    const playerPriceString = playerPriceElement.innerText;
+    const playerPrice = parseInt(playerPriceString);
+
     document.getElementById('calculate').addEventListener('click', function(){
     const listLengthValue = listLenght;
     const listLengthString = parseInt(listLengthValue);
@@ -52,15 +56,17 @@ function something(name){
     const playerPurchasePriceString = playerPurchasePriceField.value;
     const playerPurchasePrice = parseInt(playerPurchasePriceString);
 
-    const playerPriceElement = document.getElementById('player-total-price');
-    const playerPriceString = playerPriceElement.innerText;
-    const playerPrice = parseInt(playerPriceString);
 
     const playerTotalPrice = playerPurchasePrice * listLengthString;
-    playerPriceElement.innerText = playerTotalPrice
-
+    playerPriceElement.innerText = playerTotalPrice;
     })
 
+    document.getElementById('calculate-total').addEventListener('click', function(){
+    const managerPriceField = document.getElementById('manager-price');
+    const managerPriceFieldString = managerPriceField.value;
+    const managerPrice = parseInt(managerPriceFieldString);
 
+    
+    })
 }
 
