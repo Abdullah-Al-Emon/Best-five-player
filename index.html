@@ -37,9 +37,9 @@
                 <div class="card border rounded shadow-sm border-0">
                     <img src="image/Rectangle 144 (1).png" class="card-img-top" alt="...">
                     <div class="card-body text-center bg-dark">
-                        <h5 class="card-title fs-3 fw-bold">Lionel Messi</h5>
+                        <h5 id="card1-title" class="card-title fs-3 fw-bold">Lionel Messi</h5>
                         <p class="card-text text-muted"><span>36 Goals | 120 Assist</span></p>
-                        <button class="btn btn-primary px-5">Select</button>
+                        <button id="btn-messi" class=" btn btn-primary px-5">Select</button>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                     <div class="card-body text-center bg-dark">
                         <h5 class="card-title fs-3 fw-bold">Neymar Jr</h5>
                         <p class="card-text text-muted"><span>36 Goals | 120 Assist</span></p>
-                        <button class="btn btn-primary px-5">Select</button>
+                        <button id="btn-neymar" class="btn btn-primary px-5">Select</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <div class="card-body text-center bg-dark">
                         <h5 class="card-title fs-3 fw-bold">Kylian Mbappé</h5>
                         <p class="card-text text-muted"><span>36 Goals | 120 Assist</span></p>
-                        <button class="btn btn-primary px-5">Select</button>
+                        <button id="btn-mbappe" class="btn btn-primary px-5">Select</button>
                     </div>
                 </div>
             </div>
@@ -67,12 +67,12 @@
                 <div class="card border rounded shadow-sm border-0">
                     <div class="card-body text-center bg-dark">
                         <h5 class="card-title fs-3 border-bottom border-muted fw-bold">Selceted - V</h5>
-                        <ol class="fs-5 fw-bolder order-list">
-                            <li>Lionel Messi</li>
+                        <ol id="list-container" class="fs-5 fw-bolder order-list">
+                            <!-- <li>Lionel Messi</li>
                             <li>Kylian Mbappé</li>
                             <li>Neymar Jr</li>
                             <li>Sergio Ramos</li>
-                            <li>Vítor Machado</li>
+                            <li>Vítor Machado</li> -->
                         </ol>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <div class="card-body text-center bg-dark">
                         <h5 class="card-title fs-3 fw-bold">Vítor Machado</h5>
                         <p class="card-text text-muted"><span>36 Goals | 120 Assist</span></p>
-                        <button class="btn btn-primary px-5">Select</button>
+                        <button id="btn-vitor" class="btn btn-primary px-5">Select</button>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                     <div class="card-body text-center bg-dark">
                         <h5 class="card-title fs-3 fw-bold">Sergio Ramos</h5>
                         <p class="card-text text-muted"><span>36 Goals | 120 Assist</span></p>
-                        <button class="btn btn-primary px-5">Select</button>
+                        <button id="btn-sergio" class="btn btn-primary px-5">Select</button>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                     <div class="card-body text-center bg-dark">
                         <h5 class="card-title fs-3 fw-bold">Renato Sanches</h5>
                         <p class="card-text text-muted"><span>36 Goals | 120 Assist</span></p>
-                        <button class="btn btn-primary px-5">Select</button>
+                        <button id="btn-renato" class="btn btn-primary px-5">Select</button>
                     </div>
                 </div>
             </div>
@@ -140,5 +140,27 @@
     <footer class="border-top my-4 mx-5 border-muted">
         <p class="text-muted text-center pt-4">Copyright @ 2022 All Rights Reserved.</p>
     </footer>
+    <script>
+        function card1Title(cardTitle){
+            const card1Title = document.getElementById(cardTitle);
+            const value = card1Title.innerText;
+        }
+        function disabled(disableId){
+            const disabled = document.getElementById(disableId);
+            disabled.classList.add('disabled')
+        }
+        function playerNameAdd(name){
+            const listContainer = document.getElementById('list-container');
+
+            const li = document.createElement('li');
+            li.innerText = 'Lionel Messi'
+            listContainer.appendChild(li);
+        }
+        document.getElementById('btn-messi').addEventListener('click', function () {
+           card1Title('card1-title')
+            disabled('btn-messi')
+            playerNameAdd('Lionel Messi')
+        })
+    </script>
 </body>
 </html>
